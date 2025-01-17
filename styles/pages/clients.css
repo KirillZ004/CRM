@@ -121,12 +121,15 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    overflow-x: auto; /* Добавлено для горизонтальной прокрутки */
+    display: block; /* Добавлено для блокового отображения */
 }
 
 th, td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px;
     text-align: left;
+    white-space: nowrap; /* Добавлено для предотвращения переноса текста */
 }
 
 th {
@@ -407,5 +410,137 @@ button {
     .clients_add {
         font-size: 18px;
         padding: 8px 16px;
+    }
+}
+/* Form Styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+.btn-secondary {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background-color: #e6e6e6;
+}
+
+/* Add Client Button */
+.clients_add {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.clients_add:hover {
+    background-color: #45a049;
+}
+
+/* Scrollable Modal Content */
+.modal__content {
+    padding-top: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header__links {
+        flex-direction: column;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .modal__container {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .clients_add {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+}
+@media(max-width:1200px) { }
+@media(max-width:992px) { }
+@media(max-width:768px) { }
+@media(max-width:576px) { }
+
+/* Адаптивные стили для таблицы */
+@media screen and (max-width: 1200px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    .icon {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    th, td {
+        padding: 6px;
+        font-size: 12px;
+    }
+    
+    .icon {
+        font-size: 14px;
+    }
+    
+    table {
+        margin-top: 10px;
     }
 }
