@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once 'modules/AuthCheck.php';
+require_once 'api/auth/AuthCheck.php';
 AuthCheck('clients.php');
 
 ?>
@@ -19,7 +19,7 @@ AuthCheck('clients.php');
 <body>
     <div class="login-container">
         <!-- Форма с полями логин, пароль и кнопкой войти -->
-        <form class="login-form" action="/login" method="post">
+        <form class="login-form" action="api/auth/login.php" method="post">
             <label for="username">Логин:</label>
             <input type="text" id="username" name="username" required>
             
