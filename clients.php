@@ -2,6 +2,7 @@
 if (isset($_GET['do']) && $_GET['do'] === 'logout') {
     require_once 'api/auth/LogoutUser.php'; 
     require_once 'api/DB.php';
+
     LogoutUser('login.php', $DB, $_SESSION['token']);
 
 }
@@ -47,7 +48,9 @@ AuthCheck('','login.php');
 <body>
     <header class="header">
         <div class="container">
-            <p class="header__admin">Фамилия И.О.</p>
+            <p class="header__admin">
+                
+            </p>
             <ul class="header__links">
                 <li><a href="">Клиент</a></li>
                 <li><a href="">Товары</a></li>
@@ -92,6 +95,17 @@ AuthCheck('','login.php');
                         </tr>
                     </thead>
                     <tbody>
+                    <?php 
+                        require 'api/DB.php';
+                        require_once ('api/clients/OutputClients.php');
+
+                        $clients = $DB->query(
+                            "SELECT * FROM clients
+                            ")->fetchAll();
+
+                        OutputClients($clients);
+                        
+                    ?>
                         <!-- Sample Data -->
                         <tr>
                             <td>0</td>
