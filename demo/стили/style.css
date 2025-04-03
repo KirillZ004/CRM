@@ -1,0 +1,19 @@
+html , body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.error{
+    color: red;
+    font-size: 12px;
+    text-align: center;
+}
